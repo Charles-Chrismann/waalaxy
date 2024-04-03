@@ -1,0 +1,12 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd ../packages/database && npm run db:test:seed && cd ../../tests && dotenv -e ../.env.test -- jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

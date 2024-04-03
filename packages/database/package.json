@@ -5,8 +5,11 @@
   "types": "./index.ts",
   "scripts": {
     "db:generate": "prisma generate",
-    "db:push": "prisma db push --skip-generate",
-    "db:seed": "npx prisma migrate reset && ts-node seed.ts"
+    "db:dev:push": "dotenv -e ../../.env.dev -- prisma db push --skip-generate",
+    "db:dev:seed": "dotenv -e ../../.env.dev -- prisma migrate reset -f && dotenv -e ../../.env.dev -- ts-node seed.ts",
+    "db:test:migrate": "dotenv -e ../../.env.test -- prisma migrate deploy",
+
+    "db:test:seed": "dotenv -e ../../.env.test -- prisma migrate reset -f && dotenv -e ../../.env.test -- ts-node seed.ts"
   },
   "dependencies": {
     "@prisma/client": "latest"

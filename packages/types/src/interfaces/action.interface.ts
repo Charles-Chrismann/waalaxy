@@ -1,7 +1,7 @@
 interface ActionBase {
-  id: string,
+  id: number,
   name: string,
-  maxCreditCount: number,
+  maxCreditsCount: number,
 }
 
 export type {ActionBase}

@@ -1,7 +1,13 @@
-interface QueueEntryBase {
-  id: string,
-  name: string,
-  maxCreditCount: number,
+import { ActionBase } from ".."
+
+interface QueueEntry {
+  id: number,
+  createdAt: string,
+  updatedAt: string,
+  actionId: number,
+  order: number,
+  userId: number
+  action: ActionBase
 }
 
-export type {QueueEntryBase}
+export type {QueueEntry}

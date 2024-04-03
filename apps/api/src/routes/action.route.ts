@@ -1,5 +1,4 @@
 import express from "express";
-import schemaValidator from "../middlewares/schema-validator.middleware";
 import { ActionController } from "../controllers";
 
 const actionRouter = express.Router()

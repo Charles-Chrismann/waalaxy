@@ -1,0 +1,39 @@
+@use "../../colors.scss" as *;
+
+.entry {
+  background-color: #f8f9fd;
+  border: 1px solid $element-primary;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: move;
+  font-weight: 600;
+
+  button {
+    height: 36px;
+    width: 36px;
+    border: none;
+    border-radius: .75rem;
+    background-color: $element-primary;
+    color: white;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &:first-of-type {
+    background-color: $element-primary;
+    color: white;
+
+    button {
+      background-color: white;
+      color: $element-primary;
+    }
+  }
+}

@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo build",
     "dev:api": "dotenv -e .env.dev nodemon apps/api/src/server.ts",
+    "dev:frontend": "cd apps/frontend && npm run dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "jest",

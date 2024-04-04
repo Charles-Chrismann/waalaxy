@@ -77,7 +77,6 @@ async function executeAction(stop: Function) {
 
     return [...toDelete, exectuedJob].map(job => job.id)
   })
-  console.log(toDecrementId)
   io.emit('checked actions', {toDecrementId, actions})
   if(stopJob) stop()
 }

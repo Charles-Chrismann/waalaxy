@@ -2,13 +2,16 @@
   "name": "waalaxy-tt",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "postinstall": "cd ./packages/database && npm run build && npm run db:generate && npm run db:seed:all",
+    "start": "npm run build:both && dotenv -e .env node dist/api/server.js",
+    "test": "cd ./tests && npm run test",
+
+    "build:both": "cd apps/api && npm run build && cd ../frontend && npm run build && cd ../../packages/database && npm run build && cd ../..",
     "dev:api": "dotenv -e .env.dev nodemon apps/api/src/server.ts",
     "dev:frontend": "cd apps/frontend && npm run dev",
+    
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test": "jest",
-    "postinstall": "cd ./packages/database && npm run db:generate && npm run db:dev:push && npm run db:dev:seed"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

@@ -38,11 +38,9 @@ function App() {
         if (credit.id === ev.toDecrementId) return { ...credit, creditsCount: credit.creditsCount - 1 }
         return credit
       }))
-      console.log('Celui-la ne run qu\'une seule fois ')
       setHistory(prev => {
-        const newHistory = [...prev]
+        const newHistory = structuredClone(prev)
         const entryToUpdate = newHistory.find(entry => entry.actionId === ev.toDecrementId)
-        console.log('Celui-la 2 fois ')
         if(entryToUpdate) entryToUpdate._count += 1
         else newHistory.push({actionId: ev.toDecrementId as number, _count: 1})
         return newHistory

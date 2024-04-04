@@ -8,7 +8,7 @@ import Utils from "./utis"
 describe("Testing the Express App", () => {
   describe("Actions", () => {
     describe("GET /actions", () => {
-      let response: request.Response
+      let response: request.Response;
       beforeEach(async () => {
         response = await request(app).get('/api/actions').send()
       });

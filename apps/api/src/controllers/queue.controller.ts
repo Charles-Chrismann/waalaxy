@@ -41,7 +41,6 @@ class QueueController {
 
         return queueEntry
       })
-      console.log(queueEntry)
       io.emit('queueEntry creation', queueEntry)
       jobManager.startJob('Actions')
       res.statusCode = 201

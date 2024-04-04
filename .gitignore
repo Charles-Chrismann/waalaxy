@@ -40,3 +40,4 @@ yarn-error.log*
 
 dev.db
 test.db
+prod.db

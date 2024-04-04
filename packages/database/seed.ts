@@ -10,15 +10,15 @@ const prisma = new PrismaClient()
 
 const actionsToSave = [
   {
-    name: 'action A',
+    name: 'Aller dans la piscine à boule',
     maxCreditsCount: 10
   },
   {
-    name: 'action B',
+    name: 'Démarrer une campagne',
     maxCreditsCount: 10
   },
   {
-    name: 'action C',
+    name: 'Recruter un dev',
     maxCreditsCount: 15
   },
 ]

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd ../packages/database && npm run db:test:seed && cd ../../tests && dotenv -e ../.env.test -- jest --watch"
+    "test": "cd ../packages/database && npm run db:test:seed && cd ../../tests && dotenv -e ../.env.test -- jest --watchAll"
   },
   "keywords": [],
   "author": "",

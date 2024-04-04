@@ -39,10 +39,15 @@ function App() {
         return credit
       }))
       setHistory(prev => {
-        const newHistory = structuredClone(prev)
-        const entryToUpdate = newHistory.find(entry => entry.actionId === ev.toDecrementId)
-        if(entryToUpdate) entryToUpdate._count += 1
-        else newHistory.push({actionId: ev.toDecrementId as number, _count: 1})
+        const entryToUpdate = prev.find(entry => entry.actionId === ev.toDecrementId)
+        if(entryToUpdate) {
+          return prev.map(entry => {
+            if(entry.actionId === ev.toDecrementId) return {...entry, _count: entry._count + 1}
+            return entry
+          })
+        }
+        const newHistory = [...prev]
+        newHistory.push({actionId: ev.toDecrementId as number, _count: 1})
         return newHistory
       })
     }
